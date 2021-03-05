@@ -1,6 +1,5 @@
 function checkEqualElements(array) {
-    array.sort();
-    return array[0] === array[array.length - 1] ? true : false;
+    return array.every(item => item === array[0])
 };
 
 module.exports = checkEqualElements;
