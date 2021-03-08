@@ -1,7 +1,7 @@
 function exploreArray(array) {
-    for (let i = 0; i < array.length; i += 1) {
-        console.log(array[i]);
-    };
+    array.forEach(
+        item => console.log(item)
+      );
     console.log(array.length);
     return;
 };
