@@ -5,7 +5,7 @@ function deepCloneObject (object) {
     }
 
     for (let key in object) {
-        if ((typeof object[key] === 'object') && (object[key] !== null)) {
+        if ((typeof object[key] === 'object') && object[key]) {
             deepClone[key] = deepCloneObject(object[key]);
         } else {
             deepClone[key] = object[key];

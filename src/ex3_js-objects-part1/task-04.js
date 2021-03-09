@@ -1,10 +1,8 @@
 function addPropertyToObject (property, object) {
+  let copyOfObject = object
     if (!object.hasOwnProperty(property)) {
-       Object.defineProperty(object, property, {
-        value: "new"
-      });
+      copyOfObject[property] = 'new';
     }
-
     return object;
 }
 
