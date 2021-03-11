@@ -1,5 +1,7 @@
-function deepCloneObject (object) {
+function deepCloneObject(object) {
+
     let deepClone = {};
+
     if (Array.isArray(object)) {
         deepClone = [];
     }
@@ -11,6 +13,7 @@ function deepCloneObject (object) {
             deepClone[key] = object[key];
         }
     }
+    
     return deepClone;
 }
 

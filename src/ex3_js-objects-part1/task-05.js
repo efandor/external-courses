@@ -1,4 +1,5 @@
-function copyObject (object) {
+function copyObject(object) {
+    
     return Object.assign({}, object);
 }
 
