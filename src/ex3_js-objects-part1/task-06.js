@@ -1,5 +1,4 @@
-function deepCloneObject(object) {
-
+function createDeepClone(object) {
     let deepClone = {};
 
     if (Array.isArray(object)) {
@@ -8,7 +7,7 @@ function deepCloneObject(object) {
 
     for (let key in object) {
         if ((typeof object[key] === 'object') && object[key]) {
-            deepClone[key] = deepCloneObject(object[key]);
+            deepClone[key] = createDeepClone(object[key]);
         } else {
             deepClone[key] = object[key];
         }
@@ -17,4 +16,4 @@ function deepCloneObject(object) {
     return deepClone;
 }
 
-module.exports = deepCloneObject;
+module.exports = createDeepClone;
