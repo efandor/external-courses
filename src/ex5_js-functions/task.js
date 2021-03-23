@@ -1,46 +1,75 @@
 function Calculator() {
-  this.state = 0;
+  let state = 0;
 
-  this.add = (input = 0) => {
-    if (!isNaN(input)) {
-      this.state += input;
+  add = (input) => {
+    if (input === Infinity) {
+      throw new Error('Out of range when adding');
     }
-    
-    return this.add;
-  };
 
-  this.subtract = (input) => {
     if (!isNaN(input)) {
-      this.state -= input;
+      state += input;
     }
-    
-    return this.subtract;
-  };
-  
-  this.divide = (input = 1) => {
-    if (!isNaN(input)) {
-      this.state /= input;
-    }
-    
-    return this.divide;
+
+    return add;
   };
 
-  this.multiply = (input = 1) => {
-    if (!isNaN(input)) {
-      this.state *= input;
+  subtract = (input) => {
+    if (input === Infinity) {
+      throw new Error('Out of range when subtracting');
     }
-    
-    return this.multiply;
+
+    if (!isNaN(input)) {
+      state -= input;
+    }
+
+    return subtract;
   };
 
-  this.getResult = () => {
-    return this.state;
+  divide = (input) => {
+    if (input === Infinity && state === input) {
+      throw new Error('Out of range when division');
+    }
+
+    if (input === 0) {
+      throw new Error('Division by zero');
+    }
+
+    if (!isNaN(input)) {
+      state /= input;
+    }
+
+    return divide;
   };
-  
-  this.reset = () => {
-    this.state = 0;
+
+  multiply = (input) => {
+    if (input === Infinity) {
+      throw new Error('Out of range');
+    }
+
+    if (!isNaN(input)) {
+      state *= input;
+    }
+
+    return multiply;
   };
-}
+
+  getResult = () => {
+    return state;
+  };
+
+  reset = () => {
+    state = 0;
+  };
+
+  return {
+    add,
+    subtract,
+    divide,
+    multiply,
+    getResult,
+    reset,
+  };
+};
 
 const calculator = new Calculator();
 
