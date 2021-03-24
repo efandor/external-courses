@@ -1,7 +1,7 @@
 function Calculator() {
   let state = 0;
 
-  add = (input) => {
+  const add = (input) => {
     if (input === Infinity) {
       throw new Error('Out of range when adding');
     }
@@ -13,7 +13,7 @@ function Calculator() {
     return add;
   };
 
-  subtract = (input) => {
+  const subtract = (input) => {
     if (input === Infinity) {
       throw new Error('Out of range when subtracting');
     }
@@ -25,7 +25,7 @@ function Calculator() {
     return subtract;
   };
 
-  divide = (input) => {
+  const divide = (input) => {
     if (input === Infinity && state === input) {
       throw new Error('Out of range when division');
     }
@@ -41,7 +41,7 @@ function Calculator() {
     return divide;
   };
 
-  multiply = (input) => {
+  const multiply = (input) => {
     if (input === Infinity) {
       throw new Error('Out of range');
     }
@@ -53,11 +53,11 @@ function Calculator() {
     return multiply;
   };
 
-  getResult = () => {
+  const getResult = () => {
     return state;
   };
 
-  reset = () => {
+  const reset = () => {
     state = 0;
   };
 
