@@ -1,19 +1,14 @@
 function reducePolyfil(array, callback, initialValue) {
-  let reduceArray;
-  let accumulator;
-  let previousValue;
+  let i = 0;
+  let accumulator = initialValue;
 
-  if (initialValue) {
-    previousValue = initialValue;
-    reduceArray = [ ...array];
-  } else {
-    previousValue = array[0];
-    reduceArray = array.slice(1, array.length);
+  if (!initialValue) {
+    accumulator = array[0];
+    i = 1;
   }
 
-  for (let i = 0; i < reduceArray.length; i += 1) {
-    accumulator = callback(previousValue, reduceArray[i], i, reduceArray);
-    previousValue = accumulator;
+  for (i; i < array.length; i += 1) {
+    accumulator = callback(accumulator, array[i], i, array);
   };
 
   return accumulator;
