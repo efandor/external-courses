@@ -8,3 +8,8 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: #00d9ff;
 }
+
+.image-background {
+    height: 10rem;
+    background-image: url(http://cs540102.vk.me/v540102642/3094f/AryzOgH_cvo.jpg);
+}
