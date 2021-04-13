@@ -1,0 +1,32 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+#custom-table {
+    font-family: Verdana, sans-serif;
+    color: #4c5c70;
+    border: 3px solid #f8f8f8;
+}
+
+.row-even:hover, .row-odd:hover {
+    background-color: #d8dadd;
+}
+
+td, th {
+    padding: 15px;
+    min-width: max-content;
+}
+
+.table-header {
+    background-color: #f4f9fc;
+    text-transform: uppercase;
+}
+
+.row-odd {
+    background-color: #f4f9fc;
+}
+
+.name {
+    text-transform: capitalize;
+}
