@@ -89,12 +89,8 @@ html, body {
     display: none;
 }
 
-img {
-    opacity: 1;
-    -webkit-transition: opacity 500ms;
-    -moz-transition: opacity 500ms;
-    -ms-transition: opacity 500ms;
-    transition: opacity 500ms;
+#img {
+    width: 100%;
     z-index: 1;
 }
   

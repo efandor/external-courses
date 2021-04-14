@@ -113,7 +113,6 @@ input:focus {
 .form__middle {
     display: flex;
     justify-content: flex-start;
-    flex-wrap: no-wrap;
     border-bottom: 2px solid gray;
     border-top: 2px solid gray;
     margin-top: 5px;

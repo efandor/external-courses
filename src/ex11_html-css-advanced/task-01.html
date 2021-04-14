@@ -25,7 +25,6 @@
         </div>
         <img
             id="img"
-            width='100%'
             alt='Batman'
             src="https://picfiles.alphacoders.com/218/218251.jpg"
         />
@@ -40,14 +39,14 @@
             <div class="victim">
             </div>
         </div>
+        <script>
+            window.onload = () => {
+              document.body.classList.add('loaded_hiding');
+              window.setTimeout(() => {
+                document.body.classList.add('loaded');
+                document.body.classList.remove('loaded_hiding');
+              }, 500);
+            }
+        </script>
     </body>
-    <script>
-        window.onload = () => {
-          document.body.classList.add('loaded_hiding');
-          window.setTimeout(() => {
-            document.body.classList.add('loaded');
-            document.body.classList.remove('loaded_hiding');
-          }, 500);
-        }
-    </script>
 </html>
