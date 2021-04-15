@@ -14,7 +14,6 @@ header {
 
 section {
     background: lightgreen;
-    /* grid-area: section; */
 }
 
 article {
@@ -24,7 +23,6 @@ article {
 
 aside {
     background: pink;
-    /* grid-area: aside; */
 }
 
 header, article, section, .module {

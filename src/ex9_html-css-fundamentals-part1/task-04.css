@@ -1,18 +1,18 @@
 .wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-    height: 90vh;
-    max-width: 1400px;
-    width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   flex-direction: column;
+   height: 90vh;
+   max-width: 1400px;
+   width: 100%;
 }
 
 .shadow {
    width: 300px;
-    height: 200px;
-    background-color: #5a9b5a;
-    box-shadow: 5px 5px 0 #93d6b5, 10px 10px 0 #c3ecd8;
+   height: 200px;
+   background-color: #5a9b5a;
+   box-shadow: 5px 5px 0 #93d6b5, 10px 10px 0 #c3ecd8;
 }
 
 .pseudoelements {
@@ -24,8 +24,7 @@
 
 .pseudoelements::after, .pseudoelements::before {
 	content: '';
-   content: '';
-	width: 100%; 
+	width: 100%;
    height: 100%;
    position: absolute;
 }
@@ -33,14 +32,14 @@
 .pseudoelements::after {
    content: '';
 	background: #93d6b5;
-	top: 5px; 
+	top: 5px;
    left: 5px;
    z-index: -1;
 }
 
 .pseudoelements::before {
 	background: #c3ecd8;
-	top: 10px; 
+	top: 10px;
    left: 10px;
    z-index: -10;
 }
