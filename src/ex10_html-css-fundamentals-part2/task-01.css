@@ -16,9 +16,10 @@
 .second-image {
     width: 300px;
     height: 300px;
-    -webkit-mask-image: url(assets/images/mask.svg);
+    -webkit-mask-image: url(./assets/images/mask.svg);
     -webkit-mask-size: 300px;
-    mask-image: url(assets/images/mask.svg);
+    mask-image: url(./assets/images/mask.svg);
+    mask-size: 300px;
 }
 
 .third-image {
