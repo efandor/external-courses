@@ -8,8 +8,4 @@ input:required:valid {
     border-color: green;
     background-image: linear-gradient(to right, #cffce0, #a2f7a2);
 }
-  
-/* 
-input:invalid {
-    border-color: red;
-} */
+

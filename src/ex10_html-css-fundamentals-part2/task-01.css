@@ -17,8 +17,8 @@
     width: 300px;
     height: 300px;
     -webkit-mask-image: url(http://static.jsbin.com/images/dave.min.svg);
-    -webkit-mask-size:300px;
-
+    -webkit-mask-size: 300px;
+    mask-image: url(http://static.jsbin.com/images/dave.min.svg);
 }
 
 .third-image {
