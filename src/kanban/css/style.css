@@ -92,13 +92,13 @@ a:active,
    margin-left: 3vw;
 }
 
-.menu {
+.menu-closed {
    height: 100%;
    margin-left: 5px;
    cursor: pointer;
 }
 
-.menu-open {
+.menu-opened {
    height: 100%;
    margin-left: 5px;
    cursor: pointer;

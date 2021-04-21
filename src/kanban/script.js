@@ -12,20 +12,20 @@ const blockTemplate = `
     </div>
 `;
 
-const menuArrow = document.querySelector('.menu');
+const menuArrow = document.querySelector('.menu-closed');
 const avatar = document.querySelector('.avatar');
 const dropDownMenu = document.createElement('div');
-  dropDownMenu.className = 'dropDownMenu';
-  dropDownMenu.innerHTML = blockTemplate;
+dropDownMenu.className = 'dropDownMenu';
+dropDownMenu.innerHTML = blockTemplate;
 
 const toggleMenu = () => {
-    menuArrow.className = (menuArrow.className === 'menu-open') ? 'menu' : 'menu-open';
+    menuArrow.className = (menuArrow.className === 'menu-opened') ? 'menu-closed' : 'menu-opened';
 
-    if (menuArrow.className === 'menu-open') {
+    if (menuArrow.className === 'menu-opened') {
         avatar.appendChild(dropDownMenu);
     }
 
-    if (menuArrow.className === 'menu') {
+    if (menuArrow.className === 'menu-closed') {
         dropDownMenu.remove();
     }
 };
