@@ -9,7 +9,7 @@ body {
     border: 3px solid #f8f8f8;
 }
 
-.row-even:hover, .row-odd:hover {
+.row:hover {
     background-color: #d8dadd;
 }
 
@@ -23,10 +23,14 @@ td, th {
     text-transform: uppercase;
 }
 
-.row-odd {
+.name {
+    text-transform: capitalize;
+}
+
+.row:nth-child(odd) {
     background-color: #f4f9fc;
 }
 
-.name {
-    text-transform: capitalize;
+.row:nth-child(odd):hover {
+    background-color: #d8dadd;
 }

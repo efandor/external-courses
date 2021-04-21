@@ -4,7 +4,7 @@
     align-items: center;
 }
 
-.wrapper > div {
+.container {
     margin-top: 30px;
 }
 

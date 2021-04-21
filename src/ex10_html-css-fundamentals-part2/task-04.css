@@ -141,8 +141,12 @@ header {
     height: 30px;
 }
 
-span {
-    color: #6D6E71;
+.search,
+.contacts {
+    color: #716e6d;
+}
+
+.search .material-icons {
     padding-right: 5px;
 }
 
