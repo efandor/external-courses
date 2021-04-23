@@ -155,8 +155,8 @@ main {
 }
 
 ::-webkit-scrollbar {
-   height: 12px;              /* height of horizontal scrollbar*/
-   width: 4px;               /* width of vertical scrollbar */
+   height: 12px;
+   width: 4px;
    border: none;
    border-radius: 5px;
 }
@@ -175,7 +175,7 @@ main {
    flex-direction: column;
    height: max-content;
    width: 282px;
-   min-width: 282px;
+   min-width: min-content;
    border-radius: 10px;
    background-color: #EBECF0;
 }
@@ -206,14 +206,19 @@ main {
 
 
 .task {
-   border-radius: 5px;
+   display: block;
+   min-height: 20px;
    margin: 24px 12px;
    padding: 6px 3px 6px 8px;
    background-color: #ffffff;
    font-size: 18px;
+   border-radius: 5px;
+   border: none;
+   outline: none;
 }
 
-.item-menu {
+.item-menu,
+.item-menu-backlog {
    border-radius: 5px;
    font-size: 18px;
    color: #5E6C84;
@@ -223,11 +228,13 @@ main {
    background: transparent;
 }
 
-.item-menu:hover {
+.item-menu:hover,
+.item-menu-backlog:hover {
    background: #ffffff;
 }
 
-.block-down .item-menu::before {
+.block-down .item-menu::before,
+.item-menu-backlog::before {
    content: url(../assets/icons/plus.svg);
    padding-right: 5px;
 }

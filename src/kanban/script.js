@@ -15,18 +15,18 @@ const dataMock = [
     {
         title: 'backlog',
         issues: [
-            {
-                id: 'task1',
-                name: 'Sprint bugfix11 111'
-            },
-            {
-                id: 'task2',
-                name: 'Sprint bugfix222 22'
-            },
-            {
-                id: 'task3',
-                name: 'Sprint bugfix333333 3333333 33333 33333'
-            }
+            // {
+            //     id: 'task1',
+            //     name: 'Sprint bugfix11 111'
+            // },
+            // {
+            //     id: 'task2',
+            //     name: 'Sprint bugfix222 22'
+            // },
+            // {
+            //     id: 'task3',
+            //     name: 'Sprint bugfix333333 3333333 33333 33333'
+            // }
         ],
     },
     {
@@ -65,6 +65,7 @@ const finished = document.querySelector('.block-container-finished');
 const menuArrow = document.querySelector('.menu-closed');
 const avatar = document.querySelector('.avatar');
 const dropDownMenu = document.createElement('div');
+const addCardButton = document.querySelector('.item-menu-backlog');
 
 dropDownMenu.className = 'dropDownMenu';
 dropDownMenu.innerHTML = blockTemplate;
@@ -76,6 +77,7 @@ cards.forEach(elem => {
 function appendTask(cardElem, backlogElem, readyElem, progressElem, finishedElem, blockName) {
     const task = document.createElement('div');
     task.className = 'task';
+    task.setAttribute("contenteditable", "true");
     task.innerHTML = cardElem.name;
 
     switch(blockName) {
@@ -102,4 +104,14 @@ function toggleMenu() {
     if (menuArrow.className === 'menu-closed') dropDownMenu.remove();
 };
 
+function addCard() {
+    const task = document.createElement('div');
+    task.className = 'task';
+    task.setAttribute("placeholder", "Let's start");
+    task.setAttribute("contenteditable", "true");
+    backlog.append(task);
+    task.focus();
+}
+
 menuArrow.addEventListener('click', toggleMenu);
+addCardButton.addEventListener('click', addCard);
