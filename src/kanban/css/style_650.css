@@ -1,0 +1,12 @@
+header,
+footer {
+   justify-content: space-around;
+}
+
+.add__task-text {
+   display: none;
+}
+
+.about__footer {
+   display: none;
+}
