@@ -14,6 +14,7 @@ body {
 
 header,
 footer {
+   flex: 0 0 auto;
    display: flex;
    justify-content: space-between;
    align-items: center;
@@ -21,7 +22,6 @@ footer {
    min-height: 55px;
    max-width: 100%;
    background-color: #0067A3;
-   flex: 0 0 auto;
 }
 
 header {
@@ -112,7 +112,7 @@ a:active,
    width: max-content;
    height: max-content;
    border-radius: 5px;
-   background: rgba(255, 255, 255, 0.5);
+   background: rgba(255, 255, 255, 0.8);
    z-index: 10;
 }
 
@@ -129,6 +129,7 @@ a:active,
    cursor: pointer;
    font-size: 24px;
    font-weight: 900;
+   color: #0079BF;
 }
 
 .menu-item:hover {
@@ -142,13 +143,97 @@ a:active,
    height: 40px;
 }
 
+main {
+   flex: 1 0 auto;
+   display: flex;
+   justify-content: flex-start;
+   padding: 20px;
+   background-color: #0079BF;
+   overflow: auto;
+   scrollbar-color: #CBCBCB #ffffff;
+   scrollbar-width: 12px;
+}
+
+::-webkit-scrollbar {
+   height: 12px;              /* height of horizontal scrollbar*/
+   width: 4px;               /* width of vertical scrollbar */
+   border: none;
+   border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+   background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+   border-radius: 5px;
+   background: #CBCBCB;
+}
+
+.block {
+   display: flex;
+   flex-direction: column;
+   height: max-content;
+   width: 282px;
+   min-width: 282px;
+   border-radius: 10px;
+   background-color: #EBECF0;
+}
+
+.block:not(:first-child) {
+   margin-left: 24px;
+}
+
+.block-top,
+.block-down {
+   flex: 0 0 auto;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 12px;
+   font-size: 18px;
+}
+
+.block-container {
+   flex: 1 0 auto;
+   display: flex;
+   align-items: flex-start;
+}
+
+.item-title {
+   user-select:none;
+}
+
+
+.task {
+   border-radius: 5px;
+   margin: 24px 12px;
+   padding: 6px 3px 6px 8px;
+   background-color: #ffffff;
+   font-size: 18px;
+}
+
+.item-menu {
+   border-radius: 5px;
+   font-size: 18px;
+   color: #5E6C84;
+   outline: none;
+   border: none;
+   cursor: pointer;
+   background: transparent;
+}
+
+.item-menu:hover {
+   background: #ffffff;
+}
+
+.block-down .item-menu::before {
+   content: url(../assets/icons/plus.svg);
+   padding-right: 5px;
+}
+
 footer {
    padding: 0 5vw;
    font-size: 18px;
    font-weight: 400;
-}
-
-main {
-   flex: 1 0 auto;
-   background-color: #0079BF;
 }
