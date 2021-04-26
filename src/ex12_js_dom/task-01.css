@@ -31,7 +31,7 @@ header {
 a:link,
 a:visited,
 a:active,
-:hover { 
+:hover {
    text-decoration: none;
 
 }
@@ -75,13 +75,13 @@ main {
 
 .left-arrow,
 .right-arrow {
+    position: absolute;
     align-self: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 30px;
-    width: 10vw;
-    max-width: 60px;
+    min-width: 10vw;
+    max-width: 10vw;
     height: 400px;
     border: none;
     background-color: #ffffff;
@@ -89,6 +89,15 @@ main {
     font-size: 28px;
     font-weight: 900;
     cursor: pointer;
+    z-index: 100;
+}
+
+.left-arrow {
+    left: 0;
+}
+
+.right-arrow {
+    right: 0;
 }
 
 .left-arrow:hover,
@@ -107,22 +116,49 @@ main {
 }
 
 .picture {
+    position: relative;
     display: flex;
-    justify-content: space-around;
     align-items: center;
     height: 400px;
+    max-width: 89vw;
     flex-grow: 1;
     overflow-x: hidden;
+    border: none;
 }
 
 .first-pic,
 .second-pic,
 .third-pic {
+    position: absolute;
     height: 100%;
-    width: 50%;
+    min-width: 30vw;
+    width: 30vw;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+.first-pic {
+    left: 0;
+}
+
+.second-pic {
+    left: 30vw;
+}
+
+.third-pic {
+    left: 60vw;
+}
+
+.visible-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 30vw;
+    left: 0;
+    border-left: 30vw solid #0079BF;
+    border-right: 30vw solid #0079BF;
+    outline-offset: -30vw;
+    z-index: 10;
 }
 
 .animated-left {
