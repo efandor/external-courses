@@ -15,18 +15,18 @@ const dataMock = [
     {
         title: 'backlog',
         issues: [
-            // {
-            //     id: 'task1',
-            //     name: 'Sprint bugfix11 111'
-            // },
-            // {
-            //     id: 'task2',
-            //     name: 'Sprint bugfix222 22'
-            // },
-            // {
-            //     id: 'task3',
-            //     name: 'Sprint bugfix333333 3333333 33333 33333'
-            // }
+            {
+                id: 'task1',
+                name: 'Sprint bugfix11 111'
+            },
+            {
+                id: 'task2',
+                name: 'Sprint bugfix222 22'
+            },
+            {
+                id: 'task3',
+                name: 'Sprint bugfix333333 3333333 33333 33333'
+            }
         ],
     },
     {
@@ -58,23 +58,28 @@ const dataMock = [
     },
 ];
 const cards = JSON.parse(localStorage.getItem('cards')) || dataMock;
-const backlog = document.querySelector('.block-container-backlog');
-const ready = document.querySelector('.block-container-ready');
-const progress = document.querySelector('.block-container-progress');
-const finished = document.querySelector('.block-container-finished');
+const columns = {
+    backlog : document.querySelector('.block-container-backlog'),
+    ready : document.querySelector('.block-container-ready'),
+    progress : document.querySelector('.block-container-progress'),
+    finished : document.querySelector('.block-container-finished'),
+};
 const menuArrow = document.querySelector('.menu-closed');
 const avatar = document.querySelector('.avatar');
 const dropDownMenu = document.createElement('div');
-const addCardButton = document.querySelector('.item-menu-backlog');
+const addCardToBacklog = document.querySelector('.item-menu-backlog');
+const addCardToReady = document.getElementById('1');
+const addCardToProgress = document.getElementById('2');
+const addCardToFinished = document.getElementById('3');
 
 dropDownMenu.className = 'dropDownMenu';
 dropDownMenu.innerHTML = blockTemplate;
 
 cards.forEach(elem => {
-    elem.issues.forEach(card => appendTask(card, backlog, ready, progress, finished, elem.title));
+    elem.issues.forEach(card => appendTask(card, columns, elem.title));
 })
 
-function appendTask(cardElem, backlogElem, readyElem, progressElem, finishedElem, blockName) {
+function appendTask(cardElem, columnsObject, blockName) {
     const task = document.createElement('div');
     task.className = 'task';
     task.setAttribute("contenteditable", "true");
@@ -82,16 +87,16 @@ function appendTask(cardElem, backlogElem, readyElem, progressElem, finishedElem
 
     switch(blockName) {
         case 'backlog':
-            backlogElem.append(task);
+            columnsObject.backlog.append(task);
             break;
         case 'ready':
-            readyElem.append(task);
+            columnsObject.ready.append(task);
             break;
         case 'progress':
-            progressElem.append(task);
+            columnsObject.progress.append(task);
             break;
         case 'finished':
-            finishedElem.append(task);
+            columnsObject.finished.append(task);
             break;
         default:
             break;
@@ -109,9 +114,26 @@ function addCard() {
     task.className = 'task';
     task.setAttribute("placeholder", "Let's start");
     task.setAttribute("contenteditable", "true");
-    backlog.append(task);
+    columns.backlog.append(task);
     task.focus();
 }
 
+function moveCard(event) {
+    // console.log(event.target.id);
+    console.log(cards[event.target.id - 1].issues.length);
+
+    if (cards) {
+
+    }
+    menuArrow.className = (menuArrow.className === 'menu-opened') ? 'menu-closed' : 'menu-opened';
+    if (menuArrow.className === 'menu-opened') avatar.appendChild(dropDownMenu);
+    if (menuArrow.className === 'menu-closed') dropDownMenu.remove();
+}
+
 menuArrow.addEventListener('click', toggleMenu);
-addCardButton.addEventListener('click', addCard);
+addCardToBacklog.addEventListener('click', addCard);
+// addCardToOther.addEventListener('click', toggleMenu);
+addCardToReady.addEventListener('click', moveCard);
+addCardToProgress.addEventListener('click', moveCard);
+addCardToFinished.addEventListener('click', moveCard);
+console.log(addCardToReady);

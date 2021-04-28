@@ -171,6 +171,7 @@ main {
 }
 
 .block {
+   position: relative;
    display: flex;
    flex-direction: column;
    height: max-content;
@@ -218,7 +219,8 @@ main {
 }
 
 .item-menu,
-.item-menu-backlog {
+.item-menu-backlog,
+.item-menu-button {
    border-radius: 5px;
    font-size: 18px;
    color: #5E6C84;
@@ -229,12 +231,14 @@ main {
 }
 
 .item-menu:hover,
-.item-menu-backlog:hover {
+.item-menu-backlog:hover,
+.item-menu-button:hover {
    background: #ffffff;
 }
 
 .block-down .item-menu::before,
-.item-menu-backlog::before {
+.item-menu-backlog::before,
+.item-menu-button::before {
    content: url(../assets/icons/plus.svg);
    padding-right: 5px;
 }
