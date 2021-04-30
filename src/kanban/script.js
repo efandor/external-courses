@@ -107,7 +107,7 @@ function toggleMenu() {
     menuArrow.className = (menuArrow.className === 'menu-opened') ? 'menu-closed' : 'menu-opened';
     if (menuArrow.className === 'menu-opened') avatar.appendChild(dropDownMenu);
     if (menuArrow.className === 'menu-closed') dropDownMenu.remove();
-};
+}
 
 function addCard() {
     const task = document.createElement('div');
@@ -119,12 +119,7 @@ function addCard() {
 }
 
 function moveCard(event) {
-    // console.log(event.target.id);
     console.log(cards[event.target.id - 1].issues.length);
-
-    if (cards) {
-
-    }
     menuArrow.className = (menuArrow.className === 'menu-opened') ? 'menu-closed' : 'menu-opened';
     if (menuArrow.className === 'menu-opened') avatar.appendChild(dropDownMenu);
     if (menuArrow.className === 'menu-closed') dropDownMenu.remove();

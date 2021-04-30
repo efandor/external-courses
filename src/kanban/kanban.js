@@ -21,7 +21,8 @@ class Kanban {
         this.addCardToFinished = document.getElementById('3');
     }
 
-    init() {
+    /* eslint-disable */
+    init = () => {
         this.cards.forEach(elem => {
 
             elem.issues.forEach(card => {
@@ -29,12 +30,10 @@ class Kanban {
                 this.appendTask(card, this.columns, elem.title)});
         });
 
-        this.addCard.bind(Kanban);
-
         return this;
     }
     
-    appendTask(cardElem, columnsObject, blockName) {
+    appendTask = (cardElem, columnsObject, blockName) => {
         const task = document.createElement('div');
         task.className = 'task';
         task.setAttribute("contenteditable", "true");
@@ -58,31 +57,29 @@ class Kanban {
           }
     }
     
-    toggleMenu() {
+    toggleMenu = () => {
         this.menuArrow.className = (this.menuArrow.className === 'menu-opened') ? 'menu-closed' : 'menu-opened';
         if (this.menuArrow.className === 'menu-opened') this.avatar.appendChild(this.dropDownMenu);
         if (this.menuArrow.className === 'menu-closed') this.dropDownMenu.remove();
     };
     
-    addCard() {
+    addCard = () => {
         const task = document.createElement('div');
         task.className = 'task';
         task.setAttribute("placeholder", "Let's start");
         task.setAttribute("contenteditable", "true");
-        console.log(this.columns);
         this.columns.backlog.append(task);
         task.focus();
     }
     
-    moveCard(e) {
-        const event = e;
+    moveCard = (e) => {
         console.log(this.cards[e.target.id - 1].issues.length);
-        event.target.className = (event.target.className === 'menu-opened') ? 'menu-closed' : 'menu-opened';
-        if (event.target.className === 'menu-opened') event.target.parentElement.appendChild(this.dropDownMenu);
-        if (event.target.className === 'menu-closed') this.dropDownMenu.remove();
+        e.target.className = (e.target.className === 'menu-opened') ? 'menu-closed' : 'menu-opened';
+        if (e.target.className === 'menu-opened') e.target.parentElement.appendChild(this.dropDownMenu);
+        if (e.target.className === 'menu-closed') this.dropDownMenu.remove();
     }
     
-    initHandlers() {
+    initHandlers = () => {
         this.menuArrow.addEventListener('click', this.toggleMenu);
         this.addCardToBacklog.addEventListener('click', this.addCard);
         this.addCardToReady.addEventListener('click', this.moveCard);
@@ -92,7 +89,5 @@ class Kanban {
 }
 
 const kanban = new Kanban();
-
-// console.log(kanban.init);
 
 kanban.init().initHandlers();
