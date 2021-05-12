@@ -7,9 +7,9 @@ function slicePolyfil(array, begin = 0, end = array.length) {
       if ((i >= positiveBegin) && (i < positiveEnd)) {
         slicedArray.push(array[i]);
       }
-    };
+    }
   
     return slicedArray;
-};
+}
 
 module.exports = slicePolyfil;

@@ -7,7 +7,7 @@ function Hangman(word) {
   this.correctLetters.forEach(() => this.output.push('_'));
 
   this.guess = (letter) => {
-    let isIncludedLetter = false
+    let isIncludedLetter = false;
     
     if (this.step < 1) {
       console.log('Game over');
@@ -20,8 +20,6 @@ function Hangman(word) {
         isIncludedLetter = true;
         return;
       }
-
-      return;
     });
 
     if (isIncludedLetter) {
@@ -32,7 +30,7 @@ function Hangman(word) {
     this.wrongLetters.push(letter.toLowerCase());
     this.step -= 1;
 
-    console.log(`wrong letter, errors left ${this.step} | ${Array.from(new Set(this.wrongLetters)).join(',')}`);
+    console.log(`wrong letter, errors left ${this.step} | ${this.wrongLetters.join(',')}`);
 
     return this;
   }
@@ -46,7 +44,7 @@ function Hangman(word) {
   }
 
   this.getWrongSymbols = () => {
-    return Array.from(new Set(this.wrongLetters));
+    return this.wrongLetters;
   }
 
   this.getStatus = () => {

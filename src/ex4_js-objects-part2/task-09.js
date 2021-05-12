@@ -11,6 +11,6 @@ function insertSubString(string, subString, place) {
     });
 
     return changedArray.join(' ');
-};
+}
 
 module.exports = insertSubString;

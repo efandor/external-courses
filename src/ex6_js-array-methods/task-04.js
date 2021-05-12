@@ -5,9 +5,9 @@ function filterPolyfil(array, callback) {
     if (callback(array[i], i, array)) {
       filteredArray.push(array[i]);
     }
-  };
+  }
 
   return filteredArray;
-};
+}
 
 module.exports = filterPolyfil;
