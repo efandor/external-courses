@@ -1,5 +1,5 @@
-import {blockTemplate, dataMock} from './templates.js';
-
+import {blockTemplate} from './templates.js';
+import {dataMock} from './constants.js';
 class Kanban {
     constructor() {
         this.cards = JSON.parse(localStorage.getItem('cards')) || dataMock;
@@ -16,9 +16,9 @@ class Kanban {
         this.dropDownMenu.className = 'dropDownMenu';
         this.dropDownMenu.innerHTML = blockTemplate;
         this.addCardToBacklog = document.querySelector('.item-menu-backlog');
-        this.addCardToReady = document.getElementById('1');
-        this.addCardToProgress = document.getElementById('2');
-        this.addCardToFinished = document.getElementById('3');
+        this.addCardToReady = document.getElementById('ready');
+        this.addCardToProgress = document.getElementById('progress');
+        this.addCardToFinished = document.getElementById('finished');
     }
 
     /* eslint-disable */
@@ -26,7 +26,6 @@ class Kanban {
         this.cards.forEach(elem => {
 
             elem.issues.forEach(card => {
-                console.log('elem.title ',elem.title);
                 this.appendTask(card, this.columns, elem.title)});
         });
 
