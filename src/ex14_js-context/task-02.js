@@ -53,9 +53,9 @@ function Hangman(word) {
 
   this.startAgain = (newWord) => {
     this.correctLetters = newWord.toLowerCase().split('');
-    this.wrongLetters.length = 0;
+    this.wrongLetters = [];
     this.step = 6;
-    this.output.length = 0;
+    this.output = [];
 
     this.correctLetters.forEach(() => this.output.push('_'));
 
