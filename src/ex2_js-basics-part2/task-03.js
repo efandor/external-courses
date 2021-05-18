@@ -4,6 +4,7 @@ function exploreArray(array) {
         odd: 0,
         zero: 0,
     };
+    
     array.forEach(item => {
         if (typeof item !== 'number' || Number.isNaN(item)) {
             return; 
@@ -23,6 +24,6 @@ function exploreArray(array) {
     });
 
     return [outputArray.even, outputArray.odd, outputArray.zero];
-};
+}
 
 module.exports = exploreArray;

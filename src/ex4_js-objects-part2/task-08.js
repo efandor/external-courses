@@ -7,6 +7,6 @@ function switchToCamelCase(string) {
     });
 
     return changedArray[0][0].toLowerCase() + changedArray.join('').slice(1);
-};
+}
 
 module.exports = switchToCamelCase;
