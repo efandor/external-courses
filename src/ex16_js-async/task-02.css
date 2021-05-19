@@ -2,6 +2,11 @@ body {
     background-color: #808080;
 }
 
+datalist {
+    display: flex;
+    justify-content: space-between;
+}
+
 .wrapper {
     display: flex;
     justify-content: center;
