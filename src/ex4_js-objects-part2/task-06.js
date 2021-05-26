@@ -7,6 +7,6 @@ function serUpperCaseToWords(string) {
     });
 
     return changedArray.join(' ');
-};
+}
 
 module.exports = serUpperCaseToWords;

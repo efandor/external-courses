@@ -9,9 +9,9 @@ function reducePolyfil(array, callback, initialValue) {
 
   for (i; i < array.length; i += 1) {
     accumulator = callback(accumulator, array[i], i, array);
-  };
+  }
 
   return accumulator;
-};
+}
 
 module.exports = reducePolyfil;

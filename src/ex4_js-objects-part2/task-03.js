@@ -4,6 +4,6 @@ function deleteFrameSpaces(string) {
     }
     
     return string;
-};
+}
 
 module.exports = deleteFrameSpaces;

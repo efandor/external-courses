@@ -69,7 +69,7 @@ function Calculator() {
     getResult,
     reset,
   };
-};
+}
 
 const calculator = new Calculator();
 

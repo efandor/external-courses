@@ -1,4 +1,4 @@
-const home = {};
+const car = {};
 
 car.number = 'c758xt62';
 car.transmission = 'automatic';

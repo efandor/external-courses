@@ -11,8 +11,10 @@ function countSymbol(string) {
     });
 
     Object.entries(includedLetters).map(item => {
+        /* eslint-disable no-console */
         console.log(`symbol ${item[0]}: included ${item[1]} times`)
+        /* eslint-enable no-console*/
       });
-};
+}
 
 module.exports = countSymbol;

@@ -3,9 +3,9 @@ function somePolyfil(array, callback) {
     if (callback(array[i], i, array)) {
       return true;
     }
-  };
+  }
 
   return false;
-};
+}
 
 module.exports = somePolyfil;
