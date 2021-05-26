@@ -15,6 +15,7 @@ class Kanban {
         this.dropDownMenu = document.createElement('div');
         this.dropDownMenu.className = 'dropDownMenu';
         this.dropDownMenu.innerHTML = blockTemplate;
+        this.addCardButton = [...document.getElementsByClassName('item-menu-button')];
         this.addCardToBacklog = document.querySelector('.item-menu-backlog');
         this.addCardToReady = document.getElementById('1');
         this.addCardToProgress = document.getElementById('2');
@@ -26,7 +27,6 @@ class Kanban {
         this.cards.forEach(elem => {
 
             elem.issues.forEach(card => {
-                console.log('elem.title ',elem.title);
                 this.appendTask(card, this.columns, elem.title)});
         });
 
@@ -38,6 +38,8 @@ class Kanban {
         task.className = 'task';
         task.setAttribute("contenteditable", "true");
         task.innerHTML = cardElem.name;
+
+         if (this.columnNames.includes(blockName))
     
         switch(blockName) {
             case 'backlog':
@@ -73,18 +75,21 @@ class Kanban {
     }
     
     moveCard = (e) => {
-        console.log(this.cards[e.target.id - 1].issues.length);
-        e.target.className = (e.target.className === 'menu-opened') ? 'menu-closed' : 'menu-opened';
+        // e.target.className = 'menu-closed';
+        e.target.classList.toggle('opened');
         if (e.target.className === 'menu-opened') e.target.parentElement.appendChild(this.dropDownMenu);
         if (e.target.className === 'menu-closed') this.dropDownMenu.remove();
+    }
+
+    selectTaskFromPrevious = () => {
+
     }
     
     initHandlers = () => {
         this.menuArrow.addEventListener('click', this.toggleMenu);
         this.addCardToBacklog.addEventListener('click', this.addCard);
-        this.addCardToReady.addEventListener('click', this.moveCard);
-        this.addCardToProgress.addEventListener('click', this.moveCard);
-        this.addCardToFinished.addEventListener('click', this.moveCard);
+        this.addCardButton.forEach(elem => elem.addEventListener('click', this.moveCard));
+        console.log(this.addCardButton);
     }
 }
 
