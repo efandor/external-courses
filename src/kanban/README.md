@@ -1,15 +1,45 @@
-# Kanban
+# Webpack main configuration example
 
-Сверстать хедер и футер страницы. Макет скачать по [ссылке](https://drive.google.com/drive/folders/1NS38C7K_qvMdKjj85KeeUXjfVk3yCiQB?usp=sharing) - Kanban.fig, а так же онлайн-версия [здесь](https://www.figma.com/file/NUMbMR5pCisMuGNIhxgQI4/Kanban?node-id=1%3A2) <br>
+## Features
 
-Для работы потребуется Figma
+-   `.js` files process by `babel` - JavaScript compiler
+-   configured `webpack-dev-server`
+-   `HtmlWebpackPlugin` simplifies creation of HTML files to serve your webpack bundles
+-   `.svg`,`.png`, `.jpg` files processed by `file-loader`
+-   `.css` files processed by `style-loader` and `css-loader`, has css modules support
+-   to use css as module, it should be named as `*.module.css`, f.e.:
 
-**ВАЖНО!!!**
+```js
+import css from "./header.module.css";
 
-1. Для работы над заданием Kanban-board, вы должны создать **отдельную папку в папке src**: external-courses/src/kanban. Работать над доской будете только здесь!
+<header style="${css.header}"></header>;
+```
 
-2. Сразу же **из ветки master** создаете новую ветку **kanban**, работать будете  **только в ней**! Под каждое новое задание, связанное с Kanban-board, создавать ветку.
+-   you can also import your `.html` file (processed by `html-loader`):
 
-3. Создаете  **отдельные pull request** для ветки **kanban**.
+```js
+import "./component.css";
+import html from "./board.html";
 
-4. Работа с git и правками замечаний аналогично предыдущим.
+component.innerHTML = html;
+```
+
+## Installation
+
+Clone project to your folder and then install dependencies:
+
+```bash
+npm install
+```
+
+How to run WebPack dev server:
+
+```bash
+npm start
+```
+
+How to build project:
+
+```bash
+npm run build
+```

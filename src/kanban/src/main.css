@@ -1,0 +1,15 @@
+html,
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.board-inner {
+  border: 1px solid gray;
+  display: flex;
+  padding: 20px;
+}
