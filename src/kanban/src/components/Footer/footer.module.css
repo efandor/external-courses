@@ -12,3 +12,11 @@
   font-size: 18px;
   font-weight: 400;
 }
+
+.active-task {
+  user-select: none;
+}
+
+.finished-task {
+  user-select: none;
+}

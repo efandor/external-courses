@@ -9,18 +9,18 @@
    scrollbar-width: 12px;
 }
 
-::-webkit-scrollbar {
+.main::-webkit-scrollbar {
    height: 12px;
    width: 4px;
    border: none;
    border-radius: 5px;
 }
 
-::-webkit-scrollbar-track {
+.main::-webkit-scrollbar-track {
    background: #ffffff;
 }
 
-::-webkit-scrollbar-thumb {
+.main::-webkit-scrollbar-thumb {
    border-radius: 5px;
    background: #CBCBCB;
 }

@@ -8,15 +8,17 @@ export class Footer {
       className: css.footer,
       html: `
       <div>
-        Active tasks: 
+        <span>Active tasks:</span>
+        <span class="${css.activeTask}"></span>
       </div>
       <div>
-          Finished tasks: 
+        <span>Finished tasks: </span>
+        <span class="${css.finishedTask}"></span>
       </div>
       <div>
-          Kanban board by Pavel Litvinov, 2021
+        Kanban board by Pavel Litvinov, 2021
       </div>
-      `
+      `,
     }).element
   }
 }

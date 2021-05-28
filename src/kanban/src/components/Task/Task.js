@@ -1,22 +1,12 @@
-export class Task extends HTMLElement {
-  connectedCallback() {
-      const shadow = this.attachShadow({mode: 'open'});
-      
-      shadow.innerHTML = `
-        <style>
-          .task {
-            padding: 15px;
-            border-bottom: 1px solid gray;
-          }
-
-          .container {
-            background: red;
-          }
-        </style>
-
-        <div class="task">${this.getAttribute("title")}</div>
-      `;
-  }
+import DomElement from "../DomElement/DomElement";
+import css from "./task.module.css";
+export class Task {
+    constructor(text) {
+        this.element = new DomElement({
+            type: "div",
+            className: css.task,
+            html: `${text}`,
+        }).element;
+        this.element.setAttribute('contenteditable', 'true');
+    }
 }
-
-// customElements.define("kanban-task", Task);

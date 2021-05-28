@@ -15,9 +15,9 @@ export class Header {
             <a class="${css.titleText}" href="#" target="blank">Awesome Kanban Board</a>
         </div>
         <div class="${css.rightHeader}">
-            <button class="${css.addTaskButton}">
-                <img class="${css.addTaskImg}" src="${cross}" alt="Add list">
-                <span class="${css.addTaskText}">Create new list</span>
+            <button class="${css.addListButton}">
+                <img class="${css.addListImg}" src="${cross}" alt="Add list">
+                <span class="${css.addListText}">Create new list</span>
             </button>
             <div class="${css.avatar}">
                 <div class="${css.userpic}">
