@@ -1,6 +1,7 @@
 .task {
    display: block;
    min-height: 20px;
+   min-width: 200px;
    margin: 12px;
    padding: 6px 3px 6px 8px;
    background-color: #ffffff;
