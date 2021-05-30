@@ -21,23 +21,30 @@ const cardDropDownMenu = new CardDropDownMenu();
 const noTaskMessage = new NoTaskMessage();
 const footer = new Footer();
 
-state.forEach(column => {
-    const card = new Card(column.title);
+const rerender = () => {
+    main.element.innerHTML = '';
+    state.forEach(column => {
+        const card = new Card(column.title);
+    
+        if (column.issues) {
+            column.issues.forEach(task => {
+                const name = new Task(task.name);
+    
+                card.element.children[1].appendChild(name.element);
+            })
+        }
+    
+        main.element.appendChild(card.element);
 
-    if (column.issues) {
-        column.issues.forEach(task => {
-            const name = new Task(task.name);
-
-            card.element.children[1].appendChild(name.element);
-        })
-    }
-
-    main.element.appendChild(card.element);
-})
+    })
+}
+rerender();
 
 document.body.appendChild(header.element);
 document.body.appendChild(main.element);
 document.body.appendChild(footer.element);
+
+
 
 const menuArrow = document.getElementsByClassName(cssHeader.menu)[0];
 const avatar = document.getElementsByClassName(cssHeader.avatar)[0];
@@ -78,26 +85,72 @@ const toggleMenu = () => {
 }
 
 const selectTask = (event) => {
-    const taskArray = [];
+    let taskArray = [];
 
     event.stopPropagation();
     const cardTitle = event.target.parentElement.previousElementSibling.previousElementSibling.children[0].textContent;
     state.forEach((card, index) => {
         if (cardTitle === card.title) {
             if (state[index - 1].issues.length) {
-                state[index - 1].issues.forEach(task => {
+                const previousCardstate = state[index - 1];
+                
+                previousCardstate.issues.forEach(task => {
                     taskArray.push(task.name);
-                })
-            }
-            const previousTasks = new PreviousTasks(taskArray);
-            console.log('previousTasks ', previousTasks.element);
+                });
 
-    event.target.parentElement.appendChild(previousTasks.element);
-    // previousTasks.element.focus();
+                const previousTasks = new PreviousTasks(taskArray);
+
+                event.target.parentElement.appendChild(previousTasks.element);
+                document.body.prepend(previousTasks.modal);
+                window.addEventListener('click', (event) => {
+                    if (event.target === previousTasks.modal) {
+                        previousTasks.modal.remove();
+                        previousTasks.element.remove();
+                    };
+                });
+                console.log ('previousCardstate: ', previousCardstate);
+                console.log ('taskArray: ', taskArray);
+                console.log ('cardTitle: ', cardTitle);
+
+                previousTasks.element.addEventListener('click', (e) => {
+                    
+                    // if (event.target.tagName === 'OPTION') {
+                        
+                        let newState = [];
+                        state[index - 1].issues.forEach((task, i) => {
+                            if (task.name === e.target.value) {
+                                //         // newState.push({task});
+                                //         console.log ('state[index - 1]: ', state[index - 1]);
+                                //         newState = 
+                                //         console.log ('newState[index - 1]: ', newState[index - 1]);
+
+                                console.log ('state[index - 1].issues: ', state[index - 1].issues);
+                                state[index - 1].issues = state[index - 1].issues.filter(item => item.name !== task.name);
+                                
+                                state[index].issues.push({id: task.id, name: task.name});
+                                previousTasks.modal.remove();
+                                previousTasks.element.remove();
+
+                                updateTasksNumber();
+                                cardMenu.forEach(button => button.removeEventListener('click', deleteList));
+                                firstNewTaskButton.removeEventListener('click', addTask);
+                                restNewTaskButton.forEach(button => button.removeEventListener('click', selectTask));
+                                rerender();
+                                firstNewTaskButton = document.getElementsByClassName(cssCard.itemMenuDown)[0];
+                                restNewTaskButton = [...document.getElementsByClassName(cssCard.itemMenuDown)].slice(1);
+                                cardMenu = [...document.getElementsByClassName(cssCard.itemMenuTop)];
+                                cardMenu.forEach(button => button.addEventListener('click', deleteList));
+                                firstNewTaskButton.addEventListener('click', addTask);
+                                restNewTaskButton.forEach(button => button.addEventListener('click', selectTask));
+
+                        }
+                        })
+                    // }
+                })
+
+            }         
         }
     })
-
-    console.log('taskArray ', taskArray);
     
     // const task = new Task('');
     // event.target.parentElement.previousElementSibling.appendChild(task.element);
@@ -216,6 +269,8 @@ const updateTasksNumber = () => {
 }
 
 updateTasksNumber();
+
+
 
 menuArrow.addEventListener('click', toggleMenu);
 newListButton.addEventListener('click', createList);
