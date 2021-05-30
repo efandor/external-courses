@@ -4,6 +4,7 @@
   flex-direction: column;
   height: max-content;
   width: 282px;
+  min-width: max-content;
   border-radius: 10px;
   background-color: #EBECF0;
 }
@@ -18,6 +19,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  min-width: 282px;
   padding: 12px;
   font-size: 18px;
 }
@@ -25,7 +27,8 @@
 .block-container {
   flex: 1 0 auto;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .item-title {
@@ -33,7 +36,6 @@
 }
 
 .item-menu-top,
-.item-menu-down,
 .item-menu-button {
    border-radius: 5px;
    font-size: 18px;
@@ -42,6 +44,16 @@
    border: none;
    cursor: pointer;
    background: transparent;
+}
+
+
+.item-menu-down {
+   border-radius: 5px;
+   font-size: 18px;
+   color: #5E6C84;
+   outline: none;
+   border: none;
+   cursor: pointer;
 }
 
 .item-menu-top:hover,
@@ -57,8 +69,7 @@
    padding-right: 5px;
 }
 
-.disabled,
-.disabled:hover {
+.item-menu-down:disabled {
    background: transparent;
-   cursor: auto;
+   cursor: not-allowed;
 }

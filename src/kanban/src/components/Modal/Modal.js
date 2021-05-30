@@ -14,15 +14,4 @@ export class Modal {
         `,
         }).element;
     }
-
-    showModal = () => {
-        const modal = document.getElementsByClassName(css.modal)[0];
-        const closeButton = document.getElementsByClassName(css.closeModal)[0];
-        modal.element.style.display = 'block';
-
-        const closeModal = () => {
-            modal.element.style.display = 'none';
-        }
-        modal.addEventListener('click', showModal);
-    }
 }

@@ -4,11 +4,14 @@
 }
 
 .task-select {
-   border-color: blue;
+   border: 5px solid #ffffff;
+   border-radius: 10px;
 }
 
 .task {
-   color: green
+   font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+   font-size: 16px;
+   font-weight: 400;
 }
 
 .modal {

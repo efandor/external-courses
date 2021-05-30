@@ -1,6 +1,5 @@
 import DomElement from '../DomElement/DomElement'
 import css from './footer.module.css'
-
 export class Footer {
   constructor() {
     this.element = new DomElement({
