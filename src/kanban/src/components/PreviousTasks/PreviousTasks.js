@@ -3,7 +3,7 @@ import css from "./previousTasks.module.css";
 
 const createTemplate = (tasksArray) => {
     let listTemplate = `
-                <form><p><select class="${css.taskSelect}" name="task" autofocus><option disabled selected>Select task...</option>'`;
+                <form><p><select class="${css.taskSelect}" name="task" autofocus><option hidden disabled selected>Select task...</option>'`;
 
                 tasksArray.forEach(task => {
                     listTemplate += `<option class="${css.task}" value="${task}">${task}</option>`

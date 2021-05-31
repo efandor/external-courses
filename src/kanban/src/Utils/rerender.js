@@ -48,7 +48,7 @@ const initHandlers = () => {
 }
 const observer = new MutationObserver(() => set('kanbanDataPLN', state));
 
-observer.observe(document.body, {childList: true, subtree: true});
+observer.observe(main.element, {childList: true});
 newListButton.addEventListener('click', createList);
 menuArrow.addEventListener('click', toggleMenu);
 
@@ -84,5 +84,3 @@ export const rerender = () => {
     initHandlers();
     updateTasksNumber();
 }
-
-rerender();
