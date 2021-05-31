@@ -23,7 +23,7 @@ export const createList = () => {
                 if (card.title === modalInput.value) {
                     modalInput.value = `${modalInput.value}${Math.floor(Math.random()*1000)}`
                 }
-            })
+            });
 
             const card = new Card(event.target.value);
             const newCardState = {title: event.target.value, issues: []};
@@ -33,6 +33,6 @@ export const createList = () => {
             cardMenu.unshift(card.element.children[0].children[1]);
             rerender();
             modal.element.remove();
-        }    
+        }
     });
 };

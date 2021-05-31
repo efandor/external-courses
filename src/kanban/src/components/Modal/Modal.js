@@ -7,7 +7,9 @@ export class Modal {
             className: css.modal,
             html: `
 <div class="${css.modalContent}">
-    <span class="${css.closeModal}">&times;</span>
+    <div class="${css.closeModal}">
+        <span>&times;</span>
+    </div>
     <span class="${css.text}">${text}</span>
     <input class="${css.modalInput}" type="text" placeholder="Type here"></span>
 </div>

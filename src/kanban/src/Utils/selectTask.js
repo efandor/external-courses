@@ -1,9 +1,6 @@
-import { Task } from "../components/Task/Task";
 import { PreviousTasks } from "../components/PreviousTasks/PreviousTasks";
 import state from "../components/State/State";
-import {rerender, initHandlers} from './rerender';
-import {updateTasksNumber} from './updateTasksNumber';
-import cssCard from "../components/Card/card.module.css";
+import {rerender} from './rerender';
 
 export const selectTask = (event) => {
     let taskArray = [];
@@ -35,13 +32,11 @@ export const selectTask = (event) => {
                             state[index].issues.push({name: task.name});
                             previousTasks.modal.remove();
                             previousTasks.element.remove();
-                            updateTasksNumber();
                             rerender();
-                            initHandlers();
                         }
-                    })
-                })
-            }         
+                    });
+                });
+            }
         }
     });
 }

@@ -8,7 +8,7 @@ export class HeaderDropDownMenu {
             className: css.dropDownMenu,
             html:   `<div class="${css.menuWrapper}">
                         <div>
-                            <span class="${css.menuItem}">My account</span>
+                            <span class="${css.menuItemTop}">Clear cache</span>
                         </div>
                         <div>
                             <span class="${css.menuItem}">My tasks</span>

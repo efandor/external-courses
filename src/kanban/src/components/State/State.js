@@ -1,23 +1,6 @@
-const state = [
-    {
-        title: 'Backlog',
-        issues: [],
-    },
-    {
-        title: 'Ready',
-        issues: [
-    ],
-    },
-    {
-        title: 'In progress',
-        issues: [
-        ],
-    },
-    {
-        title: 'Finished',
-        issues: [
-        ],
-    },
-];
+import temlateState from "../Constants/constants";
+import { get } from '../../Utils/storage';
+
+let state = get('kanbanDataPLN', temlateState.dataArray);
 
 export default state;

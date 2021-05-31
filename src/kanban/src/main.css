@@ -7,9 +7,3 @@ body {
   margin: 0;
   font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-
-.board-inner {
-  border: 1px solid gray;
-  display: flex;
-  padding: 20px;
-}

@@ -20,3 +20,20 @@
 .finished-task {
   user-select: none;
 }
+
+@media screen and (max-width: 650px) {
+  .footer {
+    justify-content: space-evenly;
+  }
+
+  .about-footer {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .footer {
+    flex-direction: column;
+    justify-content: center;
+  }
+}

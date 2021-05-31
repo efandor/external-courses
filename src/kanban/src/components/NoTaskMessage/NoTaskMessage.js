@@ -7,7 +7,7 @@ export class NoTaskMessage {
             type: "button",
             className: css.message,
             html: `
-                <span">Create a new task list</span>
+                <span">Create new list</span>
             `,
         }).element;
     }

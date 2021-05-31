@@ -14,7 +14,7 @@ export class Footer {
         <span>Finished tasks: </span>
         <span class="${css.finishedTask}"></span>
       </div>
-      <div>
+      <div class="${css.aboutFooter}">
         Kanban board by Pavel Litvinov, 2021
       </div>
       `,

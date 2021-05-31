@@ -1,7 +1,6 @@
 import { Task } from "../components/Task/Task";
 import state from "../components/State/State";
 import {rerender} from './rerender';
-import {updateTasksNumber} from './updateTasksNumber';
 
 export const addTask = (event) => {
     const task = new Task('');
@@ -21,9 +20,14 @@ export const addTask = (event) => {
                 if (card.title === cardTitle) card.issues.push({name: task.element.textContent});
             });
             task.element.setAttribute('contenteditable', 'false');
-            updateTasksNumber();
             rerender();
         };
     }
     task.element.addEventListener('blur', removeEmtyTask);
+    task.element.parentElement.addEventListener('mouseleave', () => {
+        task.element.blur();
+    });
+    task.element.addEventListener('change', () => {
+        task.element.blur();
+    });
 }

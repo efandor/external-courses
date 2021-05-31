@@ -1,5 +1,7 @@
 .modal {
-   display: block;
+   display: flex;
+   justify-content: center;
+   align-items: center;
    position: fixed;
    z-index: 100;
    left: 0;
@@ -10,13 +12,16 @@
 }
 
 .modal-content {
+   display: flex;
+   justify-content: center;
+   align-items: center;
    position: relative;
-   margin: 30% auto;
    background-color: #cce7f7;
    border-radius: 10px;
    padding: 30px 60px;
-   width: 40%;
+   width: 40vw;
    min-width: max-content;
+   max-width: 300px;
    z-index: 1000;
 }
 
@@ -26,11 +31,12 @@
 }
 
 .close-modal {
+   display: flex;
+   justify-content: center;
+   align-items: center;
    position: absolute;
    height: 40px;
    width: 40px;
-   padding: 5px 5px 1px;
-   text-align: center;
    border-radius: 10px;
    color: #ffffff;
    right: 10px;
@@ -41,13 +47,29 @@
    background-color: #0067A3;
 }
 
+.close-modal:hover {
+   background-color: #ff6a6a;
+   transition: 0.3s;
+}
+
 .modal-input {
    min-height: 20px;
-   margin: 12px;
+   margin: 0 5px;
    padding: 6px 3px 6px 8px;
    background-color: #ffffff;
    font-size: 18px;
    border-radius: 5px;
    border: 1px solid #0067A3;
    outline: none;
+}
+
+@media screen and (max-width: 500px) {
+   .modal-content {
+      padding: 10px 40px 10px 5px;
+      width: 90vw;
+   }
+
+   .text {
+      display: none;
+   }
 }

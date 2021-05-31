@@ -1,7 +1,6 @@
 import { CardDropDownMenu } from "../components/CardDropDownMenu/CardDropDownMenu";
 import state from "../components/State/State";
-import { initHandlers } from './rerender';
-import {updateTasksNumber} from './updateTasksNumber';
+import { rerender } from './rerender';
 
 const cardDropDownMenu = new CardDropDownMenu();
 
@@ -10,21 +9,17 @@ export const deleteList = (event) => {
         const card = event.target.parentElement.parentElement;
         const cardTitle = event.target.previousElementSibling.innerText;
         let newState = state.filter((elem) => elem.title !== cardTitle);
+        
         state.length = 0;
         newState.forEach(elem => state.push(elem));
         card.remove();
         cardDropDownMenu.modal.remove();
         cardDropDownMenu.element.remove();
-        if (state.length) {
-            initHandlers();
-        }
-
-        updateTasksNumber();
+        rerender();
     });
 
     event.target.parentElement.parentElement.appendChild(cardDropDownMenu.element);
-    document.body.prepend(cardDropDownMenu.modal)
-
+    document.body.prepend(cardDropDownMenu.modal);
     window.addEventListener('click', (event) => {
         if (event.target === cardDropDownMenu.modal) {
             cardDropDownMenu.modal.remove();
