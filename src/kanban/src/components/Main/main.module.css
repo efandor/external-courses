@@ -5,8 +5,6 @@
    padding: 20px;
    background-color: #0079BF;
    overflow: auto;
-   scrollbar-color: #CBCBCB #ffffff;
-   scrollbar-width: 12px;
 }
 
 .main::-webkit-scrollbar {

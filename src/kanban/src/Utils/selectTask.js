@@ -1,6 +1,7 @@
 import { PreviousTasks } from "../components/PreviousTasks/PreviousTasks";
 import state from "../components/State/State";
 import {rerender} from './rerender';
+import { deleteModal } from './deleteModal';
 
 export const selectTask = (event) => {
     let taskArray = [];
@@ -19,12 +20,7 @@ export const selectTask = (event) => {
 
                 event.target.parentElement.appendChild(previousTasks.element);
                 document.body.prepend(previousTasks.modal);
-                window.addEventListener('click', (event) => {
-                    if (event.target === previousTasks.modal) {
-                        previousTasks.modal.remove();
-                        previousTasks.element.remove();
-                    };
-                });
+                deleteModal(previousTasks);
                 previousTasks.element.addEventListener('click', (e) => {
                     state[index - 1].issues.forEach((task) => {
                         if (task.name === e.target.value) {

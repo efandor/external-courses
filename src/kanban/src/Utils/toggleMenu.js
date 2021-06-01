@@ -1,9 +1,11 @@
-import { headerDropDownMenu, menuArrow, avatar } from './rerender';
-import cssHeader from "../components/Header/header.module.css";
+import { HeaderDropDownMenu } from "../components/HeaderDropDownMenu/HeaderDropDownMenu";
+import { menuArrow, avatar } from './rerender';
+import cssAvatar from "../components/Avatar/avatar.module.css";
+
+const headerDropDownMenu = new HeaderDropDownMenu();
 
 export const toggleMenu = () => {
-    menuArrow.classList.toggle(cssHeader.menuOpened);
-    menuArrow.classList.toggle(cssHeader.menu);
-    if (menuArrow.className === cssHeader.menuOpened) avatar.appendChild(headerDropDownMenu.element);
-    if (menuArrow.className === cssHeader.menu) headerDropDownMenu.element.remove();
+    menuArrow.classList.toggle(cssAvatar.opened);
+    if (menuArrow.className === `${cssAvatar.menu} ${cssAvatar.opened}`) avatar.element.appendChild(headerDropDownMenu.element);
+    if (menuArrow.className === `${cssAvatar.menu}`) headerDropDownMenu.element.remove();
 }

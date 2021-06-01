@@ -1,6 +1,5 @@
 import DomElement from "../DomElement/DomElement";
 import css from "./card.module.css";
-
 export class Card {
     constructor(title) {
         this.element = new DomElement({

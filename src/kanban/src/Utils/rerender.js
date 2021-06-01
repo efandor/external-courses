@@ -1,5 +1,6 @@
 import { Header } from "../components/Header/Header";
-import { HeaderDropDownMenu } from "../components/HeaderDropDownMenu/HeaderDropDownMenu";
+import { Avatar } from "../components/Avatar/Avatar";
+import { CreateListHeader } from "../components/CreateListHeader/CreateListHeader";
 import { Main } from "../components/Main/Main";
 import { Card } from "../components/Card/Card";
 import { Task } from "../components/Task/Task";
@@ -14,28 +15,34 @@ import { toggleMenu } from './toggleMenu';
 import { updateTasksNumber } from './updateTasksNumber';
 import { set } from './storage';
 import cssHeader from "../components/Header/header.module.css";
+import cssAvatar from "../components/Avatar/avatar.module.css";
 import cssCard from "../components/Card/card.module.css";
 import cssFooter from '../components/Footer/footer.module.css';
 
 export const header = new Header();
-export const headerDropDownMenu = new HeaderDropDownMenu();
+export const avatar = new Avatar();
 export const main = new Main();
 export const footer = new Footer();
 const noTaskMessage = new NoTaskMessage();
+const createListHeader = new CreateListHeader();
 
 document.body.appendChild(header.element);
+
+const rightHeaderBlock = document.getElementsByClassName(cssHeader.rightHeader)[0];
+
+rightHeaderBlock.appendChild(createListHeader.element);
+rightHeaderBlock.appendChild(avatar.element);
 document.body.appendChild(main.element);
 document.body.appendChild(footer.element);
 
-export const menuArrow = document.getElementsByClassName(cssHeader.menu)[0];
-export const avatar = document.getElementsByClassName(cssHeader.avatar)[0];
+export const menuArrow = document.getElementsByClassName(cssAvatar.menu)[0];
 export const finishedTasksNumber = document.body.getElementsByClassName(cssFooter.finishedTask)[0];
 export const activeTasksNumber = document.body.getElementsByClassName(cssFooter.activeTask)[0];
 export let cardMenu = [...document.body.getElementsByClassName(cssCard.itemMenuTop)];
 
-const newListButton = header.element.getElementsByClassName(cssHeader.addListButton)[0];
 let firstNewTaskButton = document.body.getElementsByClassName(cssCard.itemMenuDown)[0];
 let restNewTaskButton = [...document.body.getElementsByClassName(cssCard.itemMenuDown)].slice(1);
+
 const initHandlers = () => {
     if (state.length) {
         firstNewTaskButton = document.getElementsByClassName(cssCard.itemMenuDown)[0];
@@ -49,8 +56,8 @@ const initHandlers = () => {
 const observer = new MutationObserver(() => set('kanbanDataPLN', state));
 
 observer.observe(main.element, {childList: true});
-newListButton.addEventListener('click', createList);
-menuArrow.addEventListener('click', toggleMenu);
+createListHeader.element.addEventListener('click', createList);
+avatar.element.addEventListener('click', toggleMenu);
 
 export const rerender = () => {
     let isPreviousTasks = false;
