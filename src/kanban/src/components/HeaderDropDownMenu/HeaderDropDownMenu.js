@@ -1,12 +1,11 @@
 import DomElement from "../DomElement/DomElement";
 import css from "./headerDropDownMenu.module.css";
-
 export class HeaderDropDownMenu {
     constructor() {
         this.element = new DomElement({
-            type: "div",
             className: css.dropDownMenu,
-            html:   `<div class="${css.menuWrapper}">
+            html: `
+                    <div class="${css.menuWrapper}">
                         <div>
                             <span class="${css.menuItem}">My account</span>
                         </div>
@@ -16,7 +15,8 @@ export class HeaderDropDownMenu {
                         <div>
                             <span class="${css.menuItem}">Log out</span>
                         </div>
-                    </div>`,
+                    </div>
+                `,
         }).element;
     }
 }

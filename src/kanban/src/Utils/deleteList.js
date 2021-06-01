@@ -1,10 +1,11 @@
 import { CardDropDownMenu } from "../components/CardDropDownMenu/CardDropDownMenu";
 import state from "../components/State/State";
 import { rerender } from './rerender';
-
-const cardDropDownMenu = new CardDropDownMenu();
+import { deleteModal } from './deleteModal';
 
 export const deleteList = (event) => {
+    const cardDropDownMenu = new CardDropDownMenu();
+
     cardDropDownMenu.element.addEventListener('click', () => {
         const card = event.target.parentElement.parentElement;
         const cardTitle = event.target.previousElementSibling.innerText;
@@ -20,10 +21,5 @@ export const deleteList = (event) => {
 
     event.target.parentElement.parentElement.appendChild(cardDropDownMenu.element);
     document.body.prepend(cardDropDownMenu.modal);
-    window.addEventListener('click', (event) => {
-        if (event.target === cardDropDownMenu.modal) {
-            cardDropDownMenu.modal.remove();
-            cardDropDownMenu.element.remove();
-        };
-    });
+    deleteModal(cardDropDownMenu);
 }
