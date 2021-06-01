@@ -1,14 +1,14 @@
 {
-    "name": "webpack-simple-configuration",
+    "name": "awesome-kanban-board",
     "version": "1.0.0",
-    "description": "my package",
+    "description": "Kanban style application with webpack",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "webpack",
         "start": "webpack serve --hot"
     },
-    "author": "Pavel Uvarov",
+    "author": "Pavel Litvinov (Pavel Uvarov webpack boilerplate)",
     "license": "ISC",
     "devDependencies": {
         "@babel/core": "^7.12.9",
