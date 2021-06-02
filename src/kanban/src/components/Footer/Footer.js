@@ -7,11 +7,11 @@ export class Footer {
             className: css.footer,
             html: `
                 <div>
-                    <span>Active tasks:</span>
+                    <span class="${css.textFooter}">Active tasks:</span>
                     <span class="${css.activeTask}"></span>
                 </div>
                 <div>
-                    <span>Finished tasks: </span>
+                    <span class="${css.textFooter}">Finished tasks: </span>
                     <span class="${css.finishedTask}"></span>
                 </div>
                 <div class="${css.aboutFooter}">

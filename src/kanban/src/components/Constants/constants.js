@@ -1,4 +1,4 @@
-const temlateState = {
+export const temlateState = {
     dataArray : [
         {
             title: 'Backlog',
@@ -6,20 +6,15 @@ const temlateState = {
         },
         {
             title: 'Ready',
-            issues: [
-        ],
+            issues: [],
         },
         {
             title: 'In progress',
-            issues: [
-            ],
+            issues: [],
         },
         {
             title: 'Finished',
-            issues: [
-            ],
+            issues: [],
         },
     ]
 };
-
-export default temlateState;

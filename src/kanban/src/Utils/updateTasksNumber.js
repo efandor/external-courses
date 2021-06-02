@@ -1,5 +1,5 @@
 import { activeTasksNumber, finishedTasksNumber } from './rerender';
-import state from "../components/State/State";
+import { state } from "../components/State/State";
 
 export const updateTasksNumber = () => {
     const finishedCounter = (state[state.length - 1]?.issues.length || 0);

@@ -11,13 +11,13 @@
   font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 18px;
   font-weight: 400;
-}
-
-.active-task {
   user-select: none;
 }
 
-.finished-task {
+.active-task,
+.about-footer,
+.finished-task,
+.text-footer {
   user-select: none;
 }
 

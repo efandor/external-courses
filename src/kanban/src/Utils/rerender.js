@@ -6,7 +6,7 @@ import { Card } from "../components/Card/Card";
 import { Task } from "../components/Task/Task";
 import { Footer } from "../components/Footer/Footer";
 import { NoTaskMessage } from "../components/NoTaskMessage/NoTaskMessage";
-import state from "../components/State/State";
+import { state } from "../components/State/State";
 import { addTask } from './addTask';
 import { deleteList } from './deleteList';
 import { selectTask } from './selectTask';
@@ -70,10 +70,10 @@ export const rerender = () => {
         if (index) {card.element.children[2].firstElementChild.disabled = isPreviousTasks};
         if (column.issues.length) {
 
-            column.issues.forEach(task => {
-                const name = new Task(task.name);
+            column.issues.forEach(item => {
+                const task = new Task(item);
     
-                card.element.children[1].appendChild(name.element);
+                card.element.children[1].appendChild(task.element);
             });
         }
         main.element.appendChild(card.element);
