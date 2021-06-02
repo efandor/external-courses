@@ -1,5 +1,5 @@
 import { PreviousTasks } from "../components/PreviousTasks/PreviousTasks";
-import state from "../components/State/State";
+import { state } from "../components/State/State";
 import {rerender} from './rerender';
 import { deleteModal } from './deleteModal';
 
@@ -13,7 +13,7 @@ export const selectTask = (event) => {
                 const previousCardstate = state[index - 1];
 
                 previousCardstate.issues.forEach(task => {
-                    taskArray.push(task.name);
+                    taskArray.push(task);
                 });
 
                 const previousTasks = new PreviousTasks(taskArray);
@@ -23,9 +23,9 @@ export const selectTask = (event) => {
                 deleteModal(previousTasks);
                 previousTasks.element.addEventListener('click', (e) => {
                     state[index - 1].issues.forEach((task) => {
-                        if (task.name === e.target.value) {
-                            state[index - 1].issues = state[index - 1].issues.filter(item => item.name !== task.name);
-                            state[index].issues.push({name: task.name});
+                        if (task === e.target.value) {
+                            state[index - 1].issues = state[index - 1].issues.filter(item => item !== task);
+                            state[index].issues.push(task);
                             previousTasks.modal.remove();
                             previousTasks.element.remove();
                             rerender();

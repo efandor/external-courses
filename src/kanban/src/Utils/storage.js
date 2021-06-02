@@ -1,6 +1,6 @@
-export const set = (name, value) => {dataArray: localStorage.setItem(name, JSON.stringify(value))};
-export const get = (name, value) => {
-  const dataObject = JSON.parse(localStorage.getItem(name));
+export const set = (storageName, data) => {dataArray: localStorage.setItem(storageName, JSON.stringify(data))};
+export const get = (storageName, data) => {
+  const dataObject = JSON.parse(localStorage.getItem(storageName));
 
-  return dataObject || value;
+  return dataObject || data;
 };

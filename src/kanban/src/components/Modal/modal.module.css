@@ -28,6 +28,7 @@
 .text {
    font-weight: 900;
    color: #0067A3;
+   user-select: none;
 }
 
 .close-modal {

@@ -1,12 +1,13 @@
 import { Modal } from "../components/Modal/Modal";
 import { Card } from "../components/Card/Card";
-import state from "../components/State/State";
+import { state } from "../components/State/State";
 import {main, cardMenu, rerender} from './rerender';
+import css from "../components/Modal/modal.module.css";
 
 export const createList = () => {
-    const modal = new Modal('Enter title');
-    const modalInput = modal.element.querySelector('input');
-    const closeButton = modal.element.children[0].children[0];
+    const modal = new Modal('Enter title', true);
+    const modalInput = modal.element.querySelector(`.${css.modalInput}`);
+    const closeButton = modal.element.querySelector(`.${css.closeModal}`);;
 
     document.body.appendChild(modal.element);
     modalInput.focus();

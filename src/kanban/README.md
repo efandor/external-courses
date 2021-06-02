@@ -39,8 +39,8 @@ There are 3 items in src folder:
 export class Task {...}
 import { Task } from "../components/Task/Task";
 
-export default state; // [some data, some data, ...]
-import state from "../components/State/State";
+export state; // [some data, some data, ...]
+import { state } from "../components/State/State";
 
 export const addTask = () => {...}
 import { addTask } from './addTask';
@@ -53,7 +53,7 @@ import logo from '../../img/logo.svg';
 
  `.css` files processed by `style-loader` and `css-loader`
  To use css as module, it should be named as `*.module.css`
- // This variable with lowerCamelCase naming contains in CSS file with kebab-case name .some-div-name
+ This variable with lowerCamelCase naming contains in CSS file with kebab-case name .some-div-name
 ```js
 import "./main.css";
 import css from "./header.module.css"; 

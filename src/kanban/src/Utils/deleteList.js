@@ -1,5 +1,5 @@
 import { CardDropDownMenu } from "../components/CardDropDownMenu/CardDropDownMenu";
-import state from "../components/State/State";
+import { state } from "../components/State/State";
 import { rerender } from './rerender';
 import { deleteModal } from './deleteModal';
 
@@ -10,7 +10,7 @@ export const deleteList = (event) => {
         const card = event.target.parentElement.parentElement;
         const cardTitle = event.target.previousElementSibling.innerText;
         let newState = state.filter((elem) => elem.title !== cardTitle);
-        
+
         state.length = 0;
         newState.forEach(elem => state.push(elem));
         card.remove();
