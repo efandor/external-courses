@@ -55,5 +55,8 @@ module.exports = {
             },
         ],
     },
-    plugins: [new HtmlWebpackPlugin({title: 'Kanban by Pavel',})],
+    plugins: [new HtmlWebpackPlugin({
+                                        title: 'Kanban by Pavel',
+                                        favicon:	'./src/assets/images/favicon/favicon.ico',
+    })],
 };
