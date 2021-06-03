@@ -3,7 +3,7 @@
 Kanban (Japanese: 看板, meaning signboard or billboard) is a scheduling system for lean manufacturing and just-in-time manufacturing (JIT).
 Taiichi Ohno, an industrial engineer at Toyota, developed kanban to improve manufacturing efficiency.
 
-![Image alt](https://raw.githubusercontent.com/efandor/external-courses/ex17_js_components/src/kanban/src/images/kanban.png "Kanban screenshot")
+![Image alt](https://raw.githubusercontent.com/efandor/external-courses/ex17_js_components/src/kanban/src/assets/images/kanban.png)
 
 ## Installation
 
