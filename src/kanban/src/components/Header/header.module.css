@@ -1,0 +1,58 @@
+.header {
+   flex: 0 0 auto;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0 1vw 0 2vw;
+   color: #ffffff;
+   min-height: 55px;
+   max-width: 100%;
+   background-color: #0067A3;
+}
+
+a:link,
+a:visited,
+a:active,
+:hover { 
+   text-decoration: none;
+}
+
+.title {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.title-img {
+   display: block;
+}
+
+.title-text {
+   display: block;
+   font-size: 28px;
+   font-weight: 400;
+   padding: 5px;
+   color: #ffffff;
+}
+
+.right-header {
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+}
+
+@media screen and (max-width: 650px) {
+   .header {
+      justify-content: space-around;
+   }
+}
+
+@media screen and (max-width: 500px) {
+   .header {
+      justify-content: space-between;
+   }
+
+   .title-text {
+      display: none;
+   }
+}

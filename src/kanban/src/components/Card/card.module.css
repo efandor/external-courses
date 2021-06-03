@@ -1,0 +1,76 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  min-height: 300px;
+  width: 282px;
+  min-width: max-content;
+  border-radius: 10px;
+  background-color: #EBECF0;
+}
+
+.card:not(:first-child) {
+  margin-left: 24px;
+}
+
+.block-top,
+.block-down {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 282px;
+  padding: 12px;
+  font-size: 18px;
+}
+
+.task-container {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.item-title {
+  user-select: none;
+}
+
+.item-menu-top,
+.item-menu-button {
+   border-radius: 5px;
+   font-size: 18px;
+   color: #5E6C84;
+   outline: none;
+   border: none;
+   cursor: pointer;
+   background: transparent;
+}
+
+
+.add-card-button {
+   border-radius: 5px;
+   font-size: 18px;
+   color: #5E6C84;
+   outline: none;
+   border: none;
+   cursor: pointer;
+}
+
+.item-menu-top:hover,
+.add-card-button:hover,
+.item-menu-button:hover {
+   background: #ffffff;
+}
+
+.block-down .item-menu-top::before,
+.add-card-button::before,
+.item-menu-button::before {
+   content: url(../../assets/images/plus.svg);
+   padding-right: 5px;
+}
+
+.add-card-button:disabled {
+   background: transparent;
+   cursor: not-allowed;
+}
