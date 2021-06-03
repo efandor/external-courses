@@ -1,3 +1,8 @@
 __tests__
 node_modules
+DomElement__tests__
+node_modules
+test-utils.js
 DomElement
+dist
+ex15*
