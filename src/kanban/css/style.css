@@ -92,13 +92,19 @@ a:active,
    margin-left: 3vw;
 }
 
-.menu-closed {
+.opened {
    height: 100%;
    margin-left: 5px;
    cursor: pointer;
 }
 
-.menu-opened {
+.menu {
+   height: 100%;
+   margin-left: 5px;
+   cursor: pointer;
+}
+
+.menu .opened {
    height: 100%;
    margin-left: 5px;
    cursor: pointer;
@@ -241,6 +247,39 @@ main {
 .item-menu-button::before {
    content: url(../assets/icons/plus.svg);
    padding-right: 5px;
+}
+
+.disabled,
+.disabled:hover {
+   background: transparent;
+   cursor: auto;
+}
+
+
+
+.dropDownList {
+   position: absolute;
+   top: 50px;
+   right: 0;
+   min-width: max-content;
+   height: max-content;
+   border-radius: 5px;
+   background: rgba(255, 255, 255, 0.8);
+   z-index: 10;
+}
+
+.dropDownTask {
+   border-radius: 5px;
+   font-size: 18px;
+   color: #5E6C84;
+   outline: none;
+   border: none;
+   cursor: pointer;
+   background: transparent;
+}
+
+.taskSelect {
+   font-size: 18px;
 }
 
 footer {
