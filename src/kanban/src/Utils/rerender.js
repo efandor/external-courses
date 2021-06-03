@@ -68,7 +68,7 @@ export const rerender = () => {
         const addCardButton = card.element.querySelector(`.${cssCard.addCardButton}`);
         const taskContainer = card.element.querySelector(`.${cssCard.taskContainer}`);
 
-        isPreviousTasks = !Boolean(state[index - 1]?.issues.length);
+        isPreviousTasks = !Boolean(state[index - 1] && state[index - 1].issues.length);
         if (index) {
             addCardButton.disabled = isPreviousTasks;
         }

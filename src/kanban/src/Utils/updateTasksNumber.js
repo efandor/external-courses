@@ -2,9 +2,10 @@ import { activeTasksNumber, finishedTasksNumber } from './rerender';
 import { state } from "../components/State/State";
 
 export const updateTasksNumber = () => {
-    const finishedCounter = (state[state.length - 1]?.issues.length || 0);
+    const finishedCounter = state[state.length - 1] ? state[state.length - 1].issues.length : 0;
     const activeCounter = state.reduce((count, elem) => {
-        return count + (elem.issues?.length || 0);
+        const tasksInCard = elem.issues ? elem.issues.length : 0;
+        return count + tasksInCard;
     }, 0);
 
     activeTasksNumber.textContent = activeCounter;

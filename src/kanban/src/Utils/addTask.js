@@ -4,7 +4,7 @@ import { state } from "../components/State/State";
 import {rerender} from './rerender';
 import Cardcss from "../components/Card/card.module.css";
 
-const modal = new Modal('This task is on board already');
+const modal = new Modal('It is on board already');
 
 export const addTask = () => {
     const task = new Task('');
@@ -20,7 +20,7 @@ export const addTask = () => {
         } else {
             let allIssues = [];
    
-            state.forEach((card) => allIssues = allIssues.concat(card.issues));
+            state.forEach((card) => {allIssues = allIssues.concat(card.issues)});
 
             let isSameTaskName = allIssues.includes(task.element.textContent);
 
