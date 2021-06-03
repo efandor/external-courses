@@ -7,7 +7,7 @@ module.exports = {
         path: path.resolve(__dirname, "dist"),
         filename: "main_bundle.js",
     },
-   // mode: 'development',
+    mode: 'production',
     devServer: {
         contentBase: path.join(__dirname, "dist"),
         port: 9005,
