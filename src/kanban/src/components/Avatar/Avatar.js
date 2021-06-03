@@ -1,7 +1,7 @@
 import DomElement from "../DomElement/DomElement";
 import css from "./avatar.module.css";
-import avatar from '../../img/avatar.svg';
-import vector from '../../img/vector.svg';
+import avatar from '../../assets/images/avatar.svg';
+import vector from '../../assets/images/vector.svg';
 
 export class Avatar {
     constructor() {

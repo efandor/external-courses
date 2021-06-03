@@ -1,6 +1,6 @@
 import DomElement from "../DomElement/DomElement";
 import css from "./createListHeader.module.css";
-import cross from '../../img/cross.svg';
+import cross from '../../assets/images/cross.svg';
 
 export class CreateListHeader {
     constructor() {

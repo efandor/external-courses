@@ -12,7 +12,7 @@
    -moz-appearance: none;
    -ms-appearance: none;
    appearance: none;
-   background: url(../../img/vector.svg) no-repeat right center;
+   background: url(../../assets/images/vector.svg) no-repeat right center;
    background-size: 25px;
    width: 100%;
    min-width: 200px;

@@ -9,7 +9,7 @@ export const deleteList = (event) => {
     cardDropDownMenu.element.addEventListener('click', () => {
         const card = event.target.parentElement.parentElement;
         const cardTitle = event.target.previousElementSibling.innerText;
-        let newState = state.filter((elem) => elem.title !== cardTitle);
+        const newState = state.filter((elem) => elem.title !== cardTitle);
 
         state.length = 0;
         newState.forEach(elem => state.push(elem));

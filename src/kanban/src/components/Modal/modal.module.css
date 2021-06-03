@@ -66,11 +66,9 @@
 
 @media screen and (max-width: 500px) {
    .modal-content {
-      padding: 10px 40px 10px 5px;
-      width: 90vw;
-   }
-
-   .text {
-      display: none;
+      flex-direction: column;
+      padding: 10px 30px 10px 10px;
+      width: 95vw;
+      min-height: 40px;
    }
 }

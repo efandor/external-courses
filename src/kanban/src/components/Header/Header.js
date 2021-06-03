@@ -1,6 +1,6 @@
 import DomElement from "../DomElement/DomElement";
 import css from "./header.module.css";
-import logo from '../../img/logo.svg';
+import logo from '../../assets/images/logo.svg';
 export class Header {
     constructor() {
         this.element = new DomElement({

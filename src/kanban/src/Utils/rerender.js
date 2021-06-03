@@ -40,16 +40,16 @@ export const finishedTasksNumber = document.body.getElementsByClassName(cssFoote
 export const activeTasksNumber = document.body.getElementsByClassName(cssFooter.activeTask)[0];
 export let cardMenu = [...document.body.getElementsByClassName(cssCard.itemMenuTop)];
 
-let firstNewTaskButton = document.body.getElementsByClassName(cssCard.itemMenuDown)[0];
-let restNewTaskButton = [...document.body.getElementsByClassName(cssCard.itemMenuDown)].slice(1);
+let firstNewTaskButton = document.body.getElementsByClassName(cssCard.addCardButton)[0];
+let restNewTaskButton = [...document.body.getElementsByClassName(cssCard.addCardButton)].slice(1);
 
 const initHandlers = () => {
     if (state.length) {
-        firstNewTaskButton = document.getElementsByClassName(cssCard.itemMenuDown)[0];
+        firstNewTaskButton = document.getElementsByClassName(cssCard.addCardButton)[0];
         firstNewTaskButton.addEventListener('click', addTask);
         cardMenu = [...document.getElementsByClassName(cssCard.itemMenuTop)];
         cardMenu.forEach(button => button.addEventListener('click', deleteList));
-        restNewTaskButton = [...document.getElementsByClassName(cssCard.itemMenuDown)].slice(1);
+        restNewTaskButton = [...document.getElementsByClassName(cssCard.addCardButton)].slice(1);
         restNewTaskButton.forEach(button => button.addEventListener('click', selectTask));
     }
 }
@@ -65,15 +65,20 @@ export const rerender = () => {
     main.element.innerHTML = '';
     state.forEach((column, index) => {
         const card = new Card(column.title);
+        const addCardButton = card.element.querySelector(`.${cssCard.addCardButton}`);
+        const taskContainer = card.element.querySelector(`.${cssCard.taskContainer}`);
 
         isPreviousTasks = !Boolean(state[index - 1]?.issues.length);
-        if (index) {card.element.children[2].firstElementChild.disabled = isPreviousTasks};
+        if (index) {
+            addCardButton.disabled = isPreviousTasks;
+        }
+
         if (column.issues.length) {
 
             column.issues.forEach(item => {
                 const task = new Task(item);
-    
-                card.element.children[1].appendChild(task.element);
+
+                taskContainer.appendChild(task.element);
             });
         }
         main.element.appendChild(card.element);
