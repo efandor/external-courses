@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/style_650.css" media="screen and (max-width: 650px)">
+        <link rel="stylesheet" href="css/style_500.css" media="screen and (max-width: 500px)">
+        <title>Kanban board</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <header>
+                <div class="title">
+                    <img class="title-img" src="assets/icons/logo.svg" alt="logo">
+                    <a class="title__text" href="#" target="blank">Awesome Kanban Board</a>
+                </div>
+                <div class="right__header">
+                    <button class="add__task-button">
+                        <img class="add_task-img" src="assets/icons/add-list.svg" alt="add">
+                        <span class="add__task-text">Create new list</span>
+                    </button>
+                    <div class="avatar">
+                        <div class="userpic">
+                            <img class="userpic-image" src="assets/icons/user-avatar.svg" alt="Avatar">
+                        </div>
+                        <div class="menu-closed">
+                            <img class="menu-arrow" src="assets/icons/vector.svg" alt="arrow">
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <main>
+                <div class="block backlog">
+                    <div class="block-top">
+                        <span class="item-title">Backlog</span>
+                        <button class="item-menu">•••</button>
+                    </div>
+                    <div class="block-container-backlog">
+
+                    </div>
+                    <div class="block-down">
+                        <button class="item-menu-backlog">Add card</button>
+                    </div>
+                </div>
+                <div class="block ready">
+                    <div class="block-top">
+                        <span class="item-title">Ready</span>
+                        <button class="item-menu">•••</button>
+                    </div>
+                    <div class="block-container-ready">
+
+                    </div>
+                    <div class="block-down">
+                        <button class="item-menu">Add card</button>
+                    </div>
+                </div>
+                <div class="block progress">
+                    <div class="block-top">
+                        <span class="item-title">In progress</span>
+                        <button class="item-menu">•••</button>
+                    </div>
+                    <div class="block-container-progress">
+
+                    </div>
+                    <div class="block-down">
+                        <button class="item-menu">Add card</button>
+                    </div>
+                </div>
+                <div class="block finished">
+                    <div class="block-top">
+                        <span class="item-title">Finished</span>
+                        <button class="item-menu">•••</button>
+                    </div>
+                    <div class="block-container-finished">
+
+                    </div>
+                    <div class="block-down">
+                        <button class="item-menu">Add card</button>
+                    </div>
+                </div>
+            </main>
+            <footer>
+                <div class="active__footer">
+                    Active tasks: 
+                </div>
+                <div class="finished__footer">
+                    Finished tasks: 
+                </div>
+                <div class="about__footer">
+                    Kanban board by Pavel Litvinov, 2021
+                </div>
+            </footer>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
