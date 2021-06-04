@@ -1,0 +1,145 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 500px;
+    border: 2px solid rgb(131, 129, 129);
+    border-radius: 20px;
+    margin: 100px auto;
+    padding: 10px;
+}
+
+.form__top {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: rgb(235, 234, 236);
+    margin-top: 10px;
+}
+
+h1 {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 400;
+}
+
+.burger span {
+    font-size: 40px;
+    color: rgb(102, 97, 97);
+}
+
+.burger, .submit {
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+.buttons {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.location, .category {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 40px;
+    width: 200px;
+    background: rgb(235, 234, 236);
+    border-radius: 25px;
+    border: 1px solid rgb(131, 129, 129);
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.location .material-icons, .category .material-icons{
+    padding: 10px 30px 10px 10px;
+}
+
+.location, .category {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    color: rgb(131, 129, 129);
+}
+
+.submit {
+    color: rgb(131, 129, 129);
+    background: none;
+    width: max-content;
+}
+
+.submit:hover {
+    color: rgb(59, 125, 247);
+}
+
+label {
+    position:absolute; 
+    left: 0; 
+    top: 0; 
+    color:rgb(59, 125, 247);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size:10px;
+    font-weight: 800;
+    transition: 0.5s; 
+}
+
+input {
+    display: block;
+    padding: 10px;
+    border: none;
+    font-size:20px;
+    width: 96%;
+    overflow-x: hidden;
+    outline: none;
+}
+
+input:invalid + label { 
+    opacity: 0;
+}
+
+input:valid + label { 
+    opacity: 1; 
+    top: 3px;
+    left: 10px;
+}
+
+input:focus { 
+    outline:none; 
+}
+
+.form__middle {
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 2px solid gray;
+    border-top: 2px solid gray;
+    margin-top: 5px;
+    width: 100%;
+}
+
+.price {
+    position: relative;
+    width: 30%;
+}
+
+.specific {
+    position: relative;
+    width: 70%;
+    padding-left: 10px;
+    border-left: 2px solid gray;
+}
+
+.form_bottom {
+    position: relative;
+    width: 100%;
+}
+
+.price {
+    width: 35%;
+}
+    
+.specific {
+    width: 65%;
+}

@@ -1,0 +1,54 @@
+.magic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    width: 100%;
+    height: 200px;
+    border: 2px solid #727266;
+    border-radius: 10px;
+    padding: 20px 0;
+}
+
+.victim {
+    height: 50px;
+    width: 50px;
+    background: rgb(4, 238, 55);
+    animation: transformation 5s infinite;
+}
+
+@keyframes transformation {
+    0% {
+        border-radius: 50%;
+        background: rgb(245, 3, 253);
+        box-shadow: 0 -200px 100px -100px rgb(4, 238, 55) inset;
+    }
+
+    20% {
+        border-radius: 0%;
+        }
+
+    35% {
+        background: rgb(5, 235, 81);
+        box-shadow: 0 -200px 100px -100px rgb(18, 14, 218) inset;
+    }
+
+    50% {
+        transform: scale(2) skewX(45deg) skewY(45deg);
+    }
+
+    65% {
+        transform: rotate(360deg);
+    }
+
+    80% {
+        background: rgb(6, 172, 238);
+        box-shadow: 0 -200px 100px -100px yellowgreen inset;
+    }
+
+    100% {
+        border-radius: 50%;
+        background: rgb(233, 11, 11);
+        box-shadow: 0 -200px 100px -100px rgb(4, 238, 55) inset;
+    }
+}

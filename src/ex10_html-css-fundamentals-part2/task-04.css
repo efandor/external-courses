@@ -1,0 +1,256 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 95vw;
+    margin-top: 30px;
+}
+
+.wrapper-header-top, .wrapper-header-down {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70vw;
+    min-width: 850px;
+}
+
+.logo {
+    cursor: pointer;
+}
+
+.contacts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.contacts span {
+    padding: 30px;
+}
+
+.contacts span:hover {
+    color: #1FAAE2;
+}
+
+.adress {
+    position: relative;
+}
+
+.location {
+    font-size: 30px;
+    padding: 30px;
+}
+
+.location:hover {
+    color: #1FAAE2;
+}
+
+.popup:hover::after {
+    content: ''; 
+    font-size: 10px;
+}
+
+.popup {
+    position: absolute;
+    min-width: max-content;
+    border: 1px solid #D4D4D5;
+    border-radius: 5px;
+    padding: 15px;
+    top: -30px;
+    left: -52px;
+    color: #D4D4D5;
+}
+
+.popup::before, .popup::after {
+    content: ''; 
+    position: absolute;
+    left: calc(50% - 8px);
+    bottom: -16px;
+    border: 8px solid transparent;
+    border-top: 8px solid #D4D4D5;
+}
+
+.popup::after {
+    border-top: 10px solid #ffffff;
+    bottom: -15px;
+    z-index: 10; 
+}
+
+.adress .popup {
+    display: none;
+}
+
+.adress:hover .popup {
+    display: block;
+}
+
+.line {
+    min-width: 100%;
+    border-top: 2px solid #ECEEF4;
+    margin-top: 30px;
+}
+
+.burger {
+    display: none;
+}
+
+.menu-button {
+    position: relative;
+    appearance: none;
+    border: 0;
+    border-radius: 0;
+    background: #ffffff;
+    height: 85px;
+    min-width: max-content;
+    cursor: pointer;
+    color: #6D6E71;
+    font-weight: bold;
+    padding: 25px;
+}
+
+.menu-button:not(:last-child) {
+    border-right: 2px solid #ECEEF4;
+}
+
+.menu-button:hover {
+    color: #1FAAE2;
+}
+
+.menu-button:hover::after {
+    content: ''; 
+    position: absolute;
+    left: calc(50% - 10px);
+    bottom: 0;
+    border: 10px solid transparent;
+    border-bottom: 10px solid #1FAAE2;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    height: 30px;
+}
+
+.search,
+.contacts {
+    color: #716e6d;
+}
+
+.search .material-icons {
+    padding-right: 5px;
+}
+
+input {
+    min-width: 200px;
+    border: none;
+}
+
+.wrapper-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 225px;
+    padding-top: 80px;
+    height: 500px;
+    width: 964px;
+}
+
+h1 {
+    position: relative;
+    align-self: flex-start;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 42px;
+    color: #ffffff;
+    z-index: 10;
+}
+
+.middle-text {
+    position: absolute;
+    padding-left: 30px;
+    align-self: flex-start;
+    min-width: max-content;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 32px;
+    font-weight: lighter;
+    transform: scaleX(1.15);
+    color: #ffffff;
+    z-index: 1;
+}
+
+.middle-text::before {
+    content: '&';
+    font-family: Verdana, sans-serif;
+    font-size: 80px;
+    font-weight: bold;
+    transform: none;
+    color:rgb(141, 229, 245);
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 2000px;
+    height: 885px;
+    background: url(assets/images/iback.png) round;
+}
+
+.menu {
+    display: flex;
+    width: 60vw;
+}
+
+.slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-end;
+}
+
+.slider-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F4F4F4;
+    height: 240px;
+    width: 110px;
+    cursor: pointer;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    width: 1160px;
+    color: #6D6E71;
+}
+
+.why, .about {
+    display: flex;
+    justify-content: space-between;
+    width: 520px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+.picture {
+    height: 115px;
+    width: 100px;
+}
+
+.text-content {
+    width: 385px;
+}
