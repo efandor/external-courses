@@ -1,15 +1,61 @@
-# Kanban
+# Kanban web-application
 
-Сверстать хедер и футер страницы. Макет скачать по [ссылке](https://drive.google.com/drive/folders/1NS38C7K_qvMdKjj85KeeUXjfVk3yCiQB?usp=sharing) - Kanban.fig, а так же онлайн-версия [здесь](https://www.figma.com/file/NUMbMR5pCisMuGNIhxgQI4/Kanban?node-id=1%3A2) <br>
+Kanban (Japanese: 看板, meaning signboard or billboard) is a scheduling system for lean manufacturing and just-in-time manufacturing (JIT).
+Taiichi Ohno, an industrial engineer at Toyota, developed kanban to improve manufacturing efficiency.
 
-Для работы потребуется Figma
+![Image alt](https://raw.githubusercontent.com/efandor/external-courses/ex17_js_components/src/kanban/src/assets/images/kanban.png)
 
-**ВАЖНО!!!**
+## Installation
 
-1. Для работы над заданием Kanban-board, вы должны создать **отдельную папку в папке src**: external-courses/src/kanban. Работать над доской будете только здесь!
+Clone project and install dependencies:
 
-2. Сразу же **из ветки master** создаете новую ветку **kanban**, работать будете  **только в ней**! Под каждое новое задание, связанное с Kanban-board, создавать ветку.
+```bash
+npm install
+```
 
-3. Создаете  **отдельные pull request** для ветки **kanban**.
+How to run WebPack dev server (http://localhost:9005/):
 
-4. Работа с git и правками замечаний аналогично предыдущим.
+```bash
+npm start
+```
+
+How to build project:
+
+```bash
+npm run build
+```
+
+## Features
+
+There are 3 items in src folder:
+- components (applications modules and state)
+- img (static vector image files)
+- Utils (functional modules)
+
+## Features
+
+`.js` files process by `babel` - JavaScript compiler configured `webpack-dev-server`
+```js
+export class Task {...}
+import { Task } from "../components/Task/Task";
+
+export state; // [some data, some data, ...]
+import { state } from "../components/State/State";
+
+export const addTask = () => {...}
+import { addTask } from './addTask';
+```
+
+`.svg`,`.png`, `.jpg` files processed by `file-loader`
+```js
+import logo from '../../assets/images/logo.svg';
+```
+
+ `.css` files processed by `style-loader` and `css-loader`
+ To use css as module, it should be named as `*.module.css`
+ This variable with lowerCamelCase naming contains in CSS file with kebab-case name .some-div-name
+```js
+import "./main.css";
+import css from "./header.module.css"; 
+<div style="${css.someDivName}"></div>;
+```

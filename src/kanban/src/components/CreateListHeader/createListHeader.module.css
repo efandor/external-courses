@@ -1,0 +1,48 @@
+.add-list-img {
+  display: block;
+}
+
+.add-list-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  width: max-content;
+  padding: 5px;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.add-list-button:hover {
+  background-color: #b5e1fa;
+  transition: 0.3s;
+}
+
+.add-list-text {
+  display: block;
+  font-size: 18px;
+  font-weight: 400;
+  color: #000000;
+  margin: 0 5px;
+}
+
+
+@media screen and (max-width: 650px) {
+  .add-list-text {
+     display: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .add-list-text {
+     display: block;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .add-list-text {
+     display: none;
+  }
+}

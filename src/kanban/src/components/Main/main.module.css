@@ -1,0 +1,24 @@
+.main {
+   flex: 1 0 auto;
+   display: flex;
+   justify-content: flex-start;
+   padding: 20px;
+   background-color: #0079BF;
+   overflow: auto;
+}
+
+.main::-webkit-scrollbar {
+   height: 12px;
+   width: 4px;
+   border: none;
+   border-radius: 5px;
+}
+
+.main::-webkit-scrollbar-track {
+   background: #ffffff;
+}
+
+.main::-webkit-scrollbar-thumb {
+   border-radius: 5px;
+   background: #CBCBCB;
+}
